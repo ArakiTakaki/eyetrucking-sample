@@ -19,7 +19,7 @@ class MouseEvent extends React.Component {
         this.props.onFunction();
         if (this.props.onSingle) this.setState({ single: false });
       }
-    }, this.props.number);
+    }, this.props.timer);
   }
   onMouseOut() {
     this.event = false;

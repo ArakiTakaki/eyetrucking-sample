@@ -1,6 +1,8 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
 
+import MouseEvent from "~/components/atoms/MouseEvent";
+
+import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as Actions from "~/store/actions";
@@ -10,6 +12,7 @@ const mapDispatchToProps = dispatch => ({
 });
 const mapStateToProps = state => ({ store: state });
 
+@withRouter
 @connect(
   mapStateToProps,
   mapDispatchToProps
@@ -21,11 +24,12 @@ class RoomContent extends React.Component {
   render() {
     return (
       <div>
-        <Grid container spacing={16} justify="center">
-          <Grid item xs={12}>
-            test
-          </Grid>
-        </Grid>
+        <MouseEvent
+          timer={1000}
+          onFunction={() => {
+            this.props.history.push("/");
+          }}
+        />
       </div>
     );
   }
