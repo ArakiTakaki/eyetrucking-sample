@@ -17,9 +17,8 @@ class Root extends React.Component {
       <React.Fragment>
         <Progress />
         <Snack />
-        <Index />
         <Switch>
-          <Route exact path="/" component={ChatRoom} />
+          <Route exact path="/" component={Index} />
           <Route exact path="/tutorial" component={ChatRoom} />
         </Switch>
       </React.Fragment>

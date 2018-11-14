@@ -1,0 +1,17 @@
+@import "~scss/aggregation";
+.button{
+  position: absolute;
+  left: 0;
+  background: red;
+  width: 50vw;
+  height: 50vw;
+  animation: moveToRight 0s ease 1.3s 1 forwards;
+}
+@keyframes moveToRight{
+  0%{
+    left: 0;
+  }100%{
+    left: 50vw;
+  }
+
+}
