@@ -1,0 +1,11 @@
+// ResetCSS
+@import '../../node_modules/reset-css/sass/reset';
+@import "variables";
+
+a{
+  text-decoration: none;
+  color: $primary;
+}
+body,html{
+  background-color: $background;
+}
