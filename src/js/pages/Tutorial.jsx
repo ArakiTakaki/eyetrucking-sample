@@ -1,7 +1,7 @@
 import React from "react";
-import { Typography, Grid, Card } from "@material-ui/core";
-import MouseEvent from "~/components/atoms/MouseEvent";
+import { Grid } from "@material-ui/core";
 import BottomNav from "~/components/organisms/BottomNav";
+import MoviePlayer from "~/components/organisms/MoviePlayer";
 
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
@@ -48,13 +48,7 @@ class Index extends React.Component {
   render() {
     return (
       <div>
-        <Grid container xs={12}>
-          <Grid item xs={12}>
-            <Typography variant="h2" align="center">
-              チュートリアル
-            </Typography>
-          </Grid>
-        </Grid>
+        <MoviePlayer src="http://localhost:3000/movies/IMG_9972.MOV" />
         <BottomNav array={this.indexNavArray()} />
       </div>
     );

@@ -4,7 +4,7 @@ import Index from "../pages/index";
 import Progress from "./components/Progress";
 import Snack from "./components/Snack";
 import { Switch, Route } from "react-router-dom";
-import ChatRoom from "~/pages/ChatRoom";
+import Tutorial from "~/pages/Tutorial";
 
 @hot(module)
 class Root extends React.Component {
@@ -19,7 +19,7 @@ class Root extends React.Component {
         <Snack />
         <Switch>
           <Route exact path="/" component={Index} />
-          <Route exact path="/tutorial" component={ChatRoom} />
+          <Route exact path="/tutorial" component={Tutorial} />
         </Switch>
       </React.Fragment>
     );
