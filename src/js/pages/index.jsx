@@ -19,8 +19,33 @@ const mapStateToProps = state => ({ store: state });
   mapDispatchToProps
 )
 class Index extends React.Component {
+  constructor(props) {
+    super(props);
+    this.indexNavArray = this.indexNavArray.bind(this);
+  }
+
+  indexNavArray() {
+    const { history } = this.props;
+    return [
+      {
+        name: "SKIP",
+        glid: 2,
+        func: () => {
+          history.push("/");
+        },
+        timer: 500
+      },
+      {
+        name: "TUTORIAL",
+        glid: 2,
+        func: () => {
+          history.push("/tutorial");
+        },
+        timer: 500
+      }
+    ];
+  }
   render() {
-    const { name } = this.props.store;
     return (
       <div>
         <Grid container xs={12}>
@@ -29,8 +54,8 @@ class Index extends React.Component {
               ココを教え隊！
             </Typography>
           </Grid>
-          <BottomNav />
         </Grid>
+        <BottomNav array={this.indexNavArray()} />
       </div>
     );
   }

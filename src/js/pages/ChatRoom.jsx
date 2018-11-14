@@ -1,6 +1,7 @@
 import React from "react";
-
+import { Typography, Grid, Card } from "@material-ui/core";
 import MouseEvent from "~/components/atoms/MouseEvent";
+import BottomNav from "~/components/organisms/BottomNav";
 
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
@@ -17,22 +18,47 @@ const mapStateToProps = state => ({ store: state });
   mapStateToProps,
   mapDispatchToProps
 )
-class RoomContent extends React.Component {
+class Index extends React.Component {
   constructor(props) {
     super(props);
+    this.indexNavArray = this.indexNavArray.bind(this);
+  }
+
+  indexNavArray() {
+    const { history } = this.props;
+    return [
+      {
+        name: "TOP",
+        glid: 2,
+        func: () => {
+          history.push("/");
+        },
+        timer: 500
+      },
+      {
+        name: "START GAME",
+        glid: 2,
+        func: () => {
+          history.push("/tutorial");
+        },
+        timer: 500
+      }
+    ];
   }
   render() {
     return (
       <div>
-        <MouseEvent
-          timer={1000}
-          onFunction={() => {
-            this.props.history.push("/");
-          }}
-        />
+        <Grid container xs={12}>
+          <Grid item xs={12}>
+            <Typography variant="h2" align="center">
+              チュートリアル
+            </Typography>
+          </Grid>
+        </Grid>
+        <BottomNav array={this.indexNavArray()} />
       </div>
     );
   }
 }
 
-export default RoomContent;
+export default Index;
