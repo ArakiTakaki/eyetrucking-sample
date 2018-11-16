@@ -30,7 +30,7 @@ class Index extends React.Component {
       {
         name: "SKIP",
         glid: 2,
-        func: () => {
+        func() {
           history.push("/");
         },
         timer: 500
@@ -38,7 +38,7 @@ class Index extends React.Component {
       {
         name: "TUTORIAL",
         glid: 2,
-        func: () => {
+        func() {
           history.push("/tutorial");
         },
         timer: 500

@@ -2,9 +2,9 @@
 @import '../../node_modules/reset-css/sass/reset';
 @import "variables";
 
-// *{
-//   cursor: none;
-// }
+*{
+  cursor: url(/http://localhost:3000/img/cursor.png);
+}
 a{
   text-decoration: none;
   color: $primary;

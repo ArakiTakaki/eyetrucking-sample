@@ -12,10 +12,8 @@ class MouseEvent extends React.Component {
   }
   onMouseOver() {
     this.event = true;
-    console.log("show");
     setTimeout(() => {
       if (this.event && this.state.single) {
-        console.log("single");
         this.props.onFunction();
         if (this.props.onSingle) this.setState({ single: false });
       }

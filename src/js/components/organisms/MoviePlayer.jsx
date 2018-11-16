@@ -4,25 +4,36 @@ import VarticalNav from "~/components/molecules/VarticalNav";
 import { Grid, Typography } from "@material-ui/core";
 import Movie from "~/components/atoms/Movie";
 
+import style from "./scss/MoviePlayer.scss";
+
 class MoviePlayer extends React.Component {
   constructor(props) {
     super(props);
     this.moviePlayerToArray = this.moviePlayerToArray.bind(this);
+    this.time = 1.0;
   }
   moviePlayerToArray() {
     return [
       {
-        name: "ビデオを再生する",
+        name: "探索を開始する",
         timer: 1000,
         func() {
-          console.log("test");
+          document.getElementById("sampleMovie").play();
         }
       },
       {
-        name: "ビデオを停止する",
+        name: "一旦中断",
         timer: 1000,
         func() {
-          console.log("stop");
+          document.getElementById("sampleMovie").pause();
+        }
+      },
+      {
+        name: "次の秒",
+        timer: 1000,
+        func() {
+          document.getElementById("sampleMovie").currentTime = this.time;
+          this.time += 1.0;
         }
       }
     ];
@@ -30,16 +41,26 @@ class MoviePlayer extends React.Component {
   render() {
     const { src } = this.props;
     return (
-      <Grid container xs={12} justify="center">
-        <Grid item xs={9} alignItems="center">
-          <Movie src={src} />
-        </Grid>
-        <Grid item xs={3}>
-          <Grid container xs={12}>
-            <VarticalNav array={this.moviePlayerToArray()} />
+      <div>
+        <div className={style.movie_action}>
+          <MouseEvent
+            onFunction={() => {
+              console.log("GET LOG");
+            }}
+            timer={500}
+          />
+        </div>
+        <Grid container xs={12} justify="center">
+          <Grid item xs={9}>
+            <Movie src={src} id="sampleMovie" />
+          </Grid>
+          <Grid item xs={3}>
+            <Grid container xs={12}>
+              <VarticalNav array={this.moviePlayerToArray()} />
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
+      </div>
     );
   }
 }
