@@ -14,8 +14,8 @@
   height: 100vh;
   background: #fff;
   animation-name: fadeout;
-  animation-duration: 1.5s;
-  animation-delay: 2.6s;
+  animation-duration: 2.5s;
+  animation-delay: 3.5s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
@@ -29,11 +29,11 @@ $i: 1;
     top: #{($i - 1) * 5}vh;
     width: 0vw;
     height: 5vh;
-    background-color: #99CCFF;
+    background-color: #3333CC;
     animation-name: lineSplitOpenClose;
-    animation-duration: 3s;
+    animation-duration: 5s;
     animation-iteration-count: 1;
     animation-timing-function: ease;
-    animation-delay: (random(500) + 100) + ms;
+    animation-delay: (random(500) + 1000) + ms;
   }
 }

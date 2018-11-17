@@ -1,10 +1,10 @@
 import React from "react";
-import MouseEvent from "~/components/atoms/MouseEvent";
 import VarticalNav from "~/components/molecules/VarticalNav";
 import { Grid, Typography } from "@material-ui/core";
 import Movie from "~/components/atoms/Movie";
 
 import style from "./scss/MoviePlayer.scss";
+import MoveMouseEvent from "../molecules/MoveMouseEvent";
 
 class MoviePlayer extends React.Component {
   constructor(props) {
@@ -43,13 +43,7 @@ class MoviePlayer extends React.Component {
     return (
       <div>
         <div className={style.movie_action}>
-          <MouseEvent
-            onFunction={() => {
-              console.log("test");
-              alert("みたな！！！！！");
-            }}
-            timer={500}
-          />
+          <MoveMouseEvent />
         </div>
         <Grid container xs={12} justify="center">
           <Grid item xs={9}>

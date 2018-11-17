@@ -1,0 +1,38 @@
+
+@keyframes lineSplitClose{
+  0%{ width: 0vw; }
+  100%{ width: 100vw; }
+}
+
+@keyframes lineSplitOpen{
+  0%{ width: 100vw; }
+  100%{ width: 0vw; }
+}
+
+@keyframes lineSplitOpenClose{
+  0%{display: block;}
+  0%{ width: 0vw; }
+  40%{ width: 100vw; }
+  99%{ width: 100vw; }
+  60%{ margin-left: 0vw; }
+  100%{ margin-left: 100vw; }
+}
+
+@keyframes varticalSplitClose{
+  0%{ height: 0vh; }
+  100%{ height: 100vh; }
+}
+@keyframes varticalSplitOpen{
+  0%{ height: 100vh; }
+  100%{ height: 0vh; }
+}
+
+@keyframes fadeout{
+  0%{display: block;}
+  0%{opacity: 1;}
+  99%{height: 100vh;}
+  100%{
+    opacity: 0;
+    height: 0;
+  }
+}

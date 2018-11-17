@@ -27,7 +27,7 @@ class Result extends React.Component {
     const { history } = this.props;
     return [
       {
-        name: "Tutorial",
+        name: "前の画面",
         glid: 2,
         func() {
           history.push("/result");
@@ -35,7 +35,7 @@ class Result extends React.Component {
         timer: 500
       },
       {
-        name: "頑張る",
+        name: "頑依頼概要後日談張る",
         glid: 2,
         func() {
           history.push("/selected_stage/1");

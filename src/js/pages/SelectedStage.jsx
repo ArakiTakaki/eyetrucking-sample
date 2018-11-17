@@ -27,7 +27,7 @@ class Result extends React.Component {
     const { history } = this.props;
     return [
       {
-        name: "Tutorial",
+        name: "stageSelect",
         glid: 2,
         func() {
           history.push("/select_stage");
@@ -35,10 +35,10 @@ class Result extends React.Component {
         timer: 500
       },
       {
-        name: "頑張る",
+        name: "未実装",
         glid: 2,
         func() {
-          history.push("/result");
+          history.push("/");
         },
         timer: 500
       }
@@ -50,7 +50,7 @@ class Result extends React.Component {
         <Grid container xs={12}>
           <Grid item xs={12}>
             <Typography variant="h2" align="center">
-              Stage選択後のUI
+              Stage選択後の動画を流すところ
             </Typography>
           </Grid>
         </Grid>

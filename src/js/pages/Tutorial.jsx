@@ -7,6 +7,7 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as Actions from "~/store/actions";
+import TransPage from "~/components/atoms/TransPage";
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(Actions, dispatch)
@@ -49,6 +50,7 @@ class Index extends React.Component {
     const movieSrc = `http://${location.hostname}:3000/movies/IMG_9972.MOV`;
     return (
       <div>
+        <TransPage />
         <MoviePlayer src={movieSrc} />
         <BottomNav array={this.indexNavArray()} />
       </div>

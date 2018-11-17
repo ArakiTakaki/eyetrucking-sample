@@ -1,0 +1,7 @@
+@import "~scss/aggregation";
+
+.root {
+  position: fixed;
+  bottom: 0;
+  filter: drop-shadow(10px 10px 10px rgba(#555 ,0.3));
+}

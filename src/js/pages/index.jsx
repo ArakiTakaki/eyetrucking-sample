@@ -1,12 +1,14 @@
 import React from "react";
-import { Typography, Grid, Card } from "@material-ui/core";
-import MouseEvent from "~/components/atoms/MouseEvent";
+import { Typography, Grid, Fade } from "@material-ui/core";
+import styles from "./scss/index.scss";
 import BottomNav from "~/components/organisms/BottomNav";
 
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as Actions from "~/store/actions";
+import { API_ROOT } from "~/contents/api";
+import TransPage from "~/components/atoms/TransPage";
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(Actions, dispatch)
@@ -48,11 +50,11 @@ class Index extends React.Component {
   render() {
     return (
       <div>
-        <Grid container xs={12}>
-          <Grid item xs={12}>
-            <Typography variant="h2" align="center">
-              ココを教え隊！
-            </Typography>
+        <TransPage />
+        <Grid container xs={12} justify="center">
+          <Grid item xs={6}>
+            <img src={`${API_ROOT}/img/logo.png`} width="100%" />
+            <Typography> test </Typography>
           </Grid>
         </Grid>
         <BottomNav array={this.indexNavArray()} />
