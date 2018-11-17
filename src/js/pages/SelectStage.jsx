@@ -1,7 +1,6 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import BottomNav from "~/components/organisms/BottomNav";
-import MoviePlayer from "~/components/organisms/MoviePlayer";
 
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
@@ -18,7 +17,7 @@ const mapStateToProps = state => ({ store: state });
   mapStateToProps,
   mapDispatchToProps
 )
-class Index extends React.Component {
+class Result extends React.Component {
   constructor(props) {
     super(props);
     this.indexNavArray = this.indexNavArray.bind(this);
@@ -28,32 +27,37 @@ class Index extends React.Component {
     const { history } = this.props;
     return [
       {
-        name: "TOP",
+        name: "Tutorial",
         glid: 2,
-        func: () => {
-          history.push("/");
+        func() {
+          history.push("/result");
         },
         timer: 500
       },
       {
-        name: "RESULT",
+        name: "頑張る",
         glid: 2,
-        func: () => {
-          history.push("/result");
+        func() {
+          history.push("/selected_stage/1");
         },
         timer: 500
       }
     ];
   }
   render() {
-    const movieSrc = `http://${location.hostname}:3000/movies/IMG_9972.MOV`;
     return (
       <div>
-        <MoviePlayer src={movieSrc} />
+        <Grid container xs={12}>
+          <Grid item xs={12}>
+            <Typography variant="h2" align="center">
+              Stageの選択
+            </Typography>
+          </Grid>
+        </Grid>
         <BottomNav array={this.indexNavArray()} />
       </div>
     );
   }
 }
 
-export default Index;
+export default Result;

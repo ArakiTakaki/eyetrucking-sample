@@ -45,7 +45,8 @@ class MoviePlayer extends React.Component {
         <div className={style.movie_action}>
           <MouseEvent
             onFunction={() => {
-              console.log("GET LOG");
+              console.log("test");
+              alert("みたな！！！！！");
             }}
             timer={500}
           />

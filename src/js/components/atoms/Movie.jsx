@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "./scss/Movie.scss";
 
 let x = 0;
 let y = 0;
@@ -38,6 +39,7 @@ const MoviePlayer = props => {
   const { onEnded, onPlaying, onTimeUpdate, src, id } = props;
   return (
     <video
+      className={styles.video}
       onClick={onClick}
       onMouseMove={onMouseMove}
       onTimeUpdate={onTimeUpdate}

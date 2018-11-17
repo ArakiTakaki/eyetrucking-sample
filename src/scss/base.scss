@@ -3,7 +3,8 @@
 @import "variables";
 
 *{
-  cursor: url(/http://localhost:3000/img/cursor.png);
+  // TODO production
+  // cursor: none;
 }
 a{
   text-decoration: none;

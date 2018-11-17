@@ -1,7 +1,8 @@
 @import "~scss/aggregation";
 .movie_action{
+  z-index: 20000;
   width: $range / 3;
-  position: fixed;
+  position: absolute;
   top: 398px;
   left: 918px;
   transform: translate(-50%, -50%);
